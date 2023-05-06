@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ListAllFrameworkInVisualStudioSolution
 {
@@ -42,7 +38,7 @@ namespace ListAllFrameworkInVisualStudioSolution
       Console.ReadKey();
     }
 
-    private static string SearchFile(string keyword, string filename)
+    private static string SearchFile(string keywordToSearch, string filename)
     {
       var result = string.Empty;
       try
@@ -53,7 +49,7 @@ namespace ListAllFrameworkInVisualStudioSolution
           do
           {
             line = sr.ReadLine();
-            if ( line != null && line.Contains(keyword))
+            if ( line != null && line.Contains(keywordToSearch))
             {
               result = line;
             }
